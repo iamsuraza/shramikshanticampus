@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Panel | Shramik Shanti Campus</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body class="admin-body">
+  <div id="login-screen" class="login-wrap">
+    <div class="login-card">
+      <img src="images/logo.png" alt="Logo" style="width:70px;margin-bottom:14px" />
+      <h2>Admin Login</h2>
+      <p>Use the admin email and password created in Supabase Authentication.</p>
+      <form id="login-form" style="margin-top:20px">
+        <div class="field"><label>Email</label><input name="email" type="email" required /></div>
+        <div class="field"><label>Password</label><input name="password" type="password" required /></div>
+        <button class="btn btn-primary" type="submit">Sign In</button>
+        <div class="status" id="login-status"></div>
+      </form>
+    </div>
+  </div>
+
+  <div id="admin-app" class="admin-shell" style="display:none">
+    <aside class="admin-side">
+      <img src="images/logo.png" alt="Logo" />
+      <h3>Shramik Shanti CMS</h3>
+      <p style="color:rgba(255,255,255,.65)">Manage website content, notices, syllabus, results and popup notices.</p>
+      <nav>
+        <button class="active" data-panel="dashboard">Dashboard</button>
+        <button data-panel="notices">Notices</button>
+        <button data-panel="resources">Syllabus / Results</button>
+        <button data-panel="popup">Popup Notice</button>
+        <button data-panel="content">Homepage Content</button>
+        <button data-panel="inquiries">Inquiries</button>
+        <a href="index.html">View Website</a>
+      </nav>
+    </aside>
+
+    <main class="admin-main">
+      <div class="admin-top">
+        <div><div class="eyebrow">Admin Panel</div><h1 style="font-size:2.2rem">Content Management</h1></div>
+        <button class="btn btn-dark" id="logout-button">Logout</button>
+      </div>
+
+      <section class="admin-panel active" id="panel-dashboard">
+        <div class="grid-4">
+          <div class="admin-card"><h3 id="count-notices">0</h3><p>Notices</p></div>
+          <div class="admin-card"><h3 id="count-syllabus">0</h3><p>Syllabus Files</p></div>
+          <div class="admin-card"><h3 id="count-results">0</h3><p>Results</p></div>
+          <div class="admin-card"><h3 id="count-inquiries">0</h3><p>Inquiries</p></div>
+        </div>
+      </section>
+
+      <section class="admin-panel" id="panel-notices">
+        <div class="admin-card">
+          <h2>Create Notice</h2>
+          <form id="notice-form">
+            <input type="hidden" name="id" />
+            <div class="form-grid">
+              <div class="field"><label>Title</label><input name="title" required /></div>
+              <div class="field"><label>Category</label><select name="category"><option>General</option><option>Admission</option><option>Academic</option><option>Examination</option><option>Event</option><option>Scholarship</option></select></div>
+              <div class="field"><label>Attachment</label><input name="file" type="file" /></div>
+              <div class="field"><label>Publish Date</label><input name="published_at" type="datetime-local" /></div>
+              <div class="field full"><label>Body</label><textarea name="body" required></textarea></div>
+            </div>
+            <label><input name="is_pinned" type="checkbox" /> Pin notice</label>
+            <label style="margin-left:18px"><input name="is_published" type="checkbox" checked /> Published</label>
+            <div style="margin-top:16px"><button class="btn btn-primary" type="submit">Save Notice</button><button class="btn btn-outline dark" type="reset">Clear</button></div>
+            <div class="status" id="notice-status"></div>
+          </form>
+        </div>
+        <div class="admin-card"><h2>Existing Notices</h2><div class="admin-list" id="notice-admin-list"></div></div>
+      </section>
+
+      <section class="admin-panel" id="panel-resources">
+        <div class="admin-card">
+          <h2>Upload Syllabus or Result</h2>
+          <form id="resource-form">
+            <input type="hidden" name="id" />
+            <div class="form-grid">
+              <div class="field"><label>Title</label><input name="title" required /></div>
+              <div class="field"><label>Type</label><select name="type"><option value="syllabus">Syllabus</option><option value="result">Result</option></select></div>
+              <div class="field"><label>Program</label><select name="program"><option value="">All</option><option>BAIDS</option><option>BCSIT</option><option>BA LL.B</option></select></div>
+              <div class="field"><label>File</label><input name="file" type="file" required /></div>
+            </div>
+            <label><input name="is_published" type="checkbox" checked /> Published</label>
+            <div style="margin-top:16px"><button class="btn btn-primary" type="submit">Save Resource</button></div>
+            <div class="status" id="resource-status"></div>
+          </form>
+        </div>
+        <div class="admin-card"><h2>Uploaded Resources</h2><div class="admin-list" id="resource-admin-list"></div></div>
+      </section>
+
+      <section class="admin-panel" id="panel-popup">
+        <div class="admin-card">
+          <h2>Homepage Popup Notice</h2>
+          <form id="popup-form">
+            <div class="form-grid">
+              <div class="field"><label>Title</label><input name="title" required /></div>
+              <div class="field"><label>Button Label</label><input name="button_label" value="Apply Now" /></div>
+              <div class="field"><label>Link URL</label><input name="link_url" value="admissions.html" /></div>
+              <div class="field"><label>Image</label><input name="file" type="file" /></div>
+              <div class="field full"><label>Body</label><textarea name="body"></textarea></div>
+            </div>
+            <label><input name="is_active" type="checkbox" checked /> Active</label>
+            <div style="margin-top:16px"><button class="btn btn-primary" type="submit">Publish Popup</button></div>
+            <div class="status" id="popup-status"></div>
+          </form>
+        </div>
+      </section>
+
+      <section class="admin-panel" id="panel-content">
+        <div class="admin-card">
+          <h2>Editable Homepage Text</h2>
+          <form id="settings-form">
+            <div class="field"><label>Hero Title</label><input name="hero_title" /></div>
+            <div class="field"><label>Hero Subtitle</label><textarea name="hero_subtitle"></textarea></div>
+            <div class="field"><label>About Summary</label><textarea name="about_summary"></textarea></div>
+            <button class="btn btn-primary" type="submit">Save Content</button>
+            <div class="status" id="settings-status"></div>
+          </form>
+        </div>
+      </section>
+
+      <section class="admin-panel" id="panel-inquiries">
+        <div class="admin-card"><h2>Student Inquiries</h2><div class="admin-list" id="inquiry-admin-list"></div></div>
+      </section>
+    </main>
+  </div>
+  <script src="js/admin.js"></script>
+</body>
+</html>
