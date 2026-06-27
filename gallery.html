@@ -1,122 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Gallery — Shramik Shanti Campus</title>
-  <link rel="stylesheet" href="css/style.css" />
-</head>
+<head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><title>Gallery | Shramik Shanti Campus</title><link rel="stylesheet" href="css/style.css" /><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script></head>
 <body>
-<nav class="navbar always-solid" id="navbar">
-  <div class="container"><div class="navbar-inner">
-    <a href="index.html" class="navbar-brand"><img src="images/logo.png" alt="Logo" /><div class="brand-text"><span class="brand-name">Shramik Shanti Campus</span><span class="brand-sub">Affiliated to Pokhara University</span></div></a>
-    <ul class="navbar-links">
-      <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="programs.html">Programs</a></li>
-      <li><a href="faculty.html">Faculty</a></li><li><a href="notices.html">Notices</a></li><li><a href="gallery.html" class="active">Gallery</a></li><li><a href="contact.html">Contact</a></li>
-    </ul>
-    <div class="navbar-cta"><a href="admissions.html" class="btn btn-gold">Apply Now</a></div>
-    <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
-  </div></div>
-</nav>
-<nav class="mobile-nav" id="mobile-nav">
-  <a href="index.html">Home</a><a href="about.html">About</a><a href="programs.html">Programs</a>
-  <a href="faculty.html">Faculty</a><a href="notices.html">Notices</a><a href="gallery.html" class="active">Gallery</a><a href="contact.html">Contact</a>
-  <div class="mobile-nav-cta"><a href="admissions.html" class="btn btn-gold">Apply for Admission</a></div>
-</nav>
-
-<section class="page-hero">
-  <div class="container">
-    <div class="breadcrumb"><a href="index.html">Home</a><span>/</span><span style="color:rgba(255,255,255,.6)">Gallery</span></div>
-    <h1>Photo Gallery</h1>
-    <p>Glimpses of campus life, events, cultural programs, and academic activities at Shramik Shanti Campus.</p>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container">
-    <div class="filter-bar fade-in">
-      <button class="filter-btn active" data-filter="all">All</button>
-      <button class="filter-btn" data-filter="campus">Campus</button>
-      <button class="filter-btn" data-filter="events">Events</button>
-      <button class="filter-btn" data-filter="academic">Academic</button>
-      <button class="filter-btn" data-filter="sports">Sports</button>
-      <button class="filter-btn" data-filter="cultural">Cultural</button>
-    </div>
-
-    <div class="gallery-grid">
-      <div class="gallery-item fade-in" data-category="campus" data-src="gallery/Workshop1.jpeg" data-caption="Campus Main Building">
-        <img src="gallery/Workshop1.jpeg" alt="Campus Building" loading="lazy" />
-        <div class="gallery-overlay"><div class="gallery-cat">Academic</div><div class="gallery-caption">Data Science Bootcamp</div></div>
-      </div>
-      <div class="gallery-item fade-in" data-category="academic" data-src="gallery/workshop3.jpeg" data-caption="Computer Lab">
-        <img src="gallery/workshop3.jpeg" alt="Computer Lab" loading="lazy" />
-        <div class="gallery-overlay"><div class="gallery-cat">Academic</div><div class="gallery-caption">Computer Lab</div></div>
-      </div>
-      <div class="gallery-item fade-in" data-category="events" data-src="gallery/workshop2.jpeg" data-caption="Annual Day Celebration">
-        <img src="gallery/workshop2.jpeg" alt="Annual Day" loading="lazy" />
-        <div class="gallery-overlay"><div class="gallery-cat">Events</div><div class="gallery-caption">Annual Day Celebration</div></div>
-      </div>
-      <div class="gallery-item fade-in" data-category="campus" data-src="gallery/workshop4.jpeg" data-caption="Campus Library">
-        <img src="gallery/workshop4.jpeg" alt="Library" loading="lazy" />
-        <div class="gallery-overlay"><div class="gallery-cat">Campus</div><div class="gallery-caption">Campus Library</div></div>
-      </div>
-      <div class="gallery-item fade-in" data-category="sports" data-src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=800" data-caption="Sports Week — Cricket">
-        <img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=600" alt="Sports" loading="lazy" />
-        <div class="gallery-overlay"><div class="gallery-cat">Sports</div><div class="gallery-caption">Sports Week — Cricket</div></div>
-      </div>
-      <div class="gallery-item fade-in" data-category="cultural" data-src="https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?w=800" data-caption="Cultural Night 2081">
-        <img src="https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?w=600" alt="Cultural Night" loading="lazy" />
-        <div class="gallery-overlay"><div class="gallery-cat">Cultural</div><div class="gallery-caption">Cultural Night 2081</div></div>
-      </div>
-      <div class="gallery-item fade-in" data-category="academic" data-src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=800" data-caption="Graduation Ceremony">
-        <img src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=600" alt="Graduation" loading="lazy" />
-        <div class="gallery-overlay"><div class="gallery-cat">Academic</div><div class="gallery-caption">Graduation Ceremony</div></div>
-      </div>
-      <div class="gallery-item fade-in" data-category="events" data-src="https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=800" data-caption="Guest Lecture Program">
-        <img src="https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=600" alt="Guest Lecture" loading="lazy" />
-        <div class="gallery-overlay"><div class="gallery-cat">Events</div><div class="gallery-caption">Guest Lecture Program</div></div>
-      </div>
-      <div class="gallery-item fade-in" data-category="campus" data-src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800" data-caption="Administrative Office">
-        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=600" alt="Admin Office" loading="lazy" />
-        <div class="gallery-overlay"><div class="gallery-cat">Campus</div><div class="gallery-caption">Administrative Office</div></div>
-      </div>
-      <div class="gallery-item fade-in" data-category="sports" data-src="https://images.unsplash.com/photo-1526232761682-d26e03ac148e?w=800" data-caption="Annual Sports Meet">
-        <img src="https://images.unsplash.com/photo-1526232761682-d26e03ac148e?w=600" alt="Sports Meet" loading="lazy" />
-        <div class="gallery-overlay"><div class="gallery-cat">Sports</div><div class="gallery-caption">Annual Sports Meet</div></div>
-      </div>
-      <div class="gallery-item fade-in" data-category="cultural" data-src="gallery/workshop5.jpeg" data-caption="Freshers' Welcome Program">
-        <img src="gallery/workshop5.jpeg" alt="Freshers Welcome" loading="lazy" />
-        <div class="gallery-overlay"><div class="gallery-cat">Cultural</div><div class="gallery-caption">Freshers' Welcome Program</div></div>
-      </div>
-      <div class="gallery-item fade-in" data-category="academic" data-src="https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?w=800" data-caption="Classroom Lecture Session">
-        <img src="https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?w=600" alt="Classroom" loading="lazy" />
-        <div class="gallery-overlay"><div class="gallery-cat">Academic</div><div class="gallery-caption">Classroom Lecture Session</div></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Lightbox -->
-<div class="lightbox" id="lightbox">
-  <button class="lightbox-close" id="lightbox-close">&times;</button>
-  <button class="lightbox-nav lightbox-prev" id="lightbox-prev">&#8249;</button>
-  <img class="lightbox-img" id="lightbox-img" src="" alt="Gallery Image" />
-  <button class="lightbox-nav lightbox-next" id="lightbox-next">&#8250;</button>
-  <div class="lightbox-caption" id="lightbox-caption"></div>
-</div>
-
-<footer class="footer"><div class="container">
-  <div class="footer-grid">
-    <div class="footer-brand"><img src="images/logo.png" alt="Logo" /><p>Empowering Nepal's future leaders through excellence in technology, law, and innovation since 1997.</p></div>
-    <div class="footer-links"><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="programs.html">Programs</a></li><li><a href="faculty.html">Faculty</a></li><li><a href="notices.html">Notices</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="contact.html">Contact</a></li></ul></div>
-    <div class="footer-programs"><h4>Programs</h4><ul><li><a href="programs.html">BCSIT</a></li><li><a href="programs.html">BALLB</a></li><li><a href="programs.html">BAIDS</a></li><li><a href="admissions.html">Admissions</a></li></ul></div>
-    <div class="footer-contact"><h4>Contact</h4>
-      <div class="footer-contact-item"><div class="icon">📍</div><p>Chyasal, Shankhamul, Lalitpur-9, Nepal</p></div>
-      <div class="footer-contact-item"><div class="icon">📞</div><a href="tel:+97715420110">977-01-5420110</a></div>
-      <div class="footer-contact-item"><div class="icon">✉️</div><a href="mailto:shramik.campus@gmail.com">shramik.campus@gmail.com</a></div>
-    </div>
-  </div>
-  <div class="footer-bottom"><p>&copy; 2024 Shramik Shanti Campus. All rights reserved.</p><p>Affiliated with <a href="https://www.pu.edu.np" target="_blank">Pokhara University</a></p></div>
-</div></footer>
-<script src="js/main.js"></script>
+  <nav class="navbar solid" id="navbar"><div class="container nav-inner"><a class="brand" href="index.html"><img src="images/logo.png" alt="Logo" /><span><strong>Shramik Shanti Campus</strong><span>Pokhara University</span></span></a><div class="nav-links"><a href="index.html">Home</a><a href="about.html">About</a><a href="programs.html">Programs</a><a href="notices.html">Notices</a><a class="active" href="gallery.html">Gallery</a><a href="contact.html">Contact</a></div><div class="nav-cta"><a class="btn btn-accent" href="admissions.html">Join Now</a></div><button class="nav-toggle" id="hamburger" aria-label="Open menu">=</button></div></nav>
+  <div class="mobile-nav" id="mobile-nav"><a href="index.html">Home</a><a href="about.html">About</a><a href="programs.html">Programs</a><a href="notices.html">Notices</a><a class="active" href="gallery.html">Gallery</a><a href="contact.html">Contact</a><a href="admissions.html">Admissions</a></div>
+  <header class="page-hero"><div class="container"><div class="breadcrumb"><a href="index.html">Home</a><span>/</span><span>Gallery</span></div><h1>Campus Gallery</h1><p>Photos from Shramik Shanti Campus, Chyasal-9, Lalitpur.</p></div></header>
+  <main class="section"><div class="container"><div class="section-head"><div class="eyebrow">Life at SSC</div><h2>Campus spaces and student moments</h2></div><div class="gallery-grid"><div class="gallery-item" data-src="images/campus_building_2026.jpeg"><img src="images/campus_building_2026.jpeg" alt="Campus building" /><div class="gallery-caption">Campus Building</div></div><div class="gallery-item" data-src="images/students_2026.jpeg"><img src="images/students_2026.jpeg" alt="Students at campus" /><div class="gallery-caption">Students at Campus</div></div><div class="gallery-item" data-src="images/admission_popup_2026.jpeg"><img src="images/admission_popup_2026.jpeg" alt="Admission notice" /><div class="gallery-caption">Admissions Notice</div></div><div class="gallery-item" data-src="gallery/workshop1.jpg"><img src="gallery/workshop1.jpg" alt="Workshop activity" /><div class="gallery-caption">Campus Activity</div></div><div class="gallery-item" data-src="gallery/workshop2.jpg"><img src="gallery/workshop2.jpg" alt="Campus event" /><div class="gallery-caption">Campus Event</div></div></div></div></main>
+  <footer class="footer"><div class="container footer-grid"><div><img src="images/university_logo.png" alt="Pokhara University logo" /><p>Shramik Shanti Campus, Chyasal-9, Lalitpur.</p></div><div><h4>Quick Links</h4><ul><li><a href="about.html">About</a></li><li><a href="programs.html">Programs</a></li><li><a href="notices.html">Notices</a></li></ul></div><div><h4>Programs</h4><ul><li>BAIDS</li><li>BCSIT</li><li>BA LL.B</li></ul></div><div><h4>Contact</h4><p><a href="tel:+977015404111">015404111</a></p><p><a href="mailto:sscampuspu@gmail.com">sscampuspu@gmail.com</a></p></div></div><div class="container footer-bottom"><p>© 2026 Shramik Shanti Campus.</p><p>Constituent Campus of Pokhara University</p></div></footer>
+  <script src="js/main.js"></script>
 </body>
 </html>

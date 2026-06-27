@@ -1,178 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Notices — Shramik Shanti Campus</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Notices and Results | Shramik Shanti Campus</title>
   <link rel="stylesheet" href="css/style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
 <body>
-<nav class="navbar always-solid" id="navbar">
-  <div class="container"><div class="navbar-inner">
-    <a href="index.html" class="navbar-brand"><img src="images/logo.png" alt="Logo" /><div class="brand-text"><span class="brand-name">Shramik Shanti Campus</span><span class="brand-sub">Affiliated to Pokhara University</span></div></a>
-    <ul class="navbar-links">
-      <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="programs.html">Programs</a></li>
-      <li><a href="faculty.html">Faculty</a></li><li><a href="notices.html" class="active">Notices</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="contact.html">Contact</a></li>
-    </ul>
-    <div class="navbar-cta"><a href="admissions.html" class="btn btn-gold">Apply Now</a></div>
-    <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
-  </div></div>
-</nav>
-<nav class="mobile-nav" id="mobile-nav">
-  <a href="index.html">Home</a><a href="about.html">About</a><a href="programs.html">Programs</a>
-  <a href="faculty.html">Faculty</a><a href="notices.html" class="active">Notices</a><a href="gallery.html">Gallery</a><a href="contact.html">Contact</a>
-  <div class="mobile-nav-cta"><a href="admissions.html" class="btn btn-gold">Apply for Admission</a></div>
-</nav>
-
-<section class="page-hero">
-  <div class="container">
-    <div class="breadcrumb"><a href="index.html">Home</a><span>/</span><span style="color:rgba(255,255,255,.6)">Notices</span></div>
-    <h1>Notice Board</h1>
-    <p>All official announcements, examination schedules, events, and updates from Shramik Shanti Campus.</p>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container">
-    <div class="filter-bar fade-in">
-      <button class="filter-btn active" data-filter="all">All</button>
-      <button class="filter-btn" data-filter="academic">Academic</button>
-      <button class="filter-btn" data-filter="exam">Examination</button>
-      <button class="filter-btn" data-filter="event">Events</button>
-      <button class="filter-btn" data-filter="scholarship">Scholarship</button>
-      <button class="filter-btn" data-filter="general">General</button>
+  <nav class="navbar solid" id="navbar"><div class="container nav-inner"><a class="brand" href="index.html"><img src="images/logo.png" alt="Logo" /><span><strong>Shramik Shanti Campus</strong><span>Pokhara University</span></span></a><div class="nav-links"><a href="index.html">Home</a><a href="about.html">About</a><a href="programs.html">Programs</a><a class="active" href="notices.html">Notices</a><a href="gallery.html">Gallery</a><a href="contact.html">Contact</a></div><div class="nav-cta"><a class="btn btn-accent" href="admissions.html">Join Now</a></div><button class="nav-toggle" id="hamburger" aria-label="Open menu">=</button></div></nav>
+  <div class="mobile-nav" id="mobile-nav"><a href="index.html">Home</a><a href="about.html">About</a><a href="programs.html">Programs</a><a class="active" href="notices.html">Notices</a><a href="gallery.html">Gallery</a><a href="contact.html">Contact</a><a href="admissions.html">Admissions</a></div>
+  <header class="page-hero"><div class="container"><div class="breadcrumb"><a href="index.html">Home</a><span>/</span><span>Notices</span></div><h1>Notice Board</h1><p>Official announcements, popup notices, syllabus files and result publications from Shramik Shanti Campus.</p></div></header>
+  <main class="section">
+    <div class="container">
+      <div class="section-head"><div class="eyebrow">Campus Updates</div><h2>All Notices</h2><p>Published notices are loaded from Supabase. Use the admin panel to pin, attach files or hide items.</p></div>
+      <div class="notice-list" id="notices-container"><div class="empty-state">Loading notices...</div></div>
     </div>
-
-    <div class="notice-card pinned fade-in" data-category="academic">
-      <div class="notice-card-icon">📌</div>
-      <div class="notice-card-body">
-        <div class="notice-card-header">
-          <span class="notice-tag tag-academic">Academic</span>
-          <span class="notice-tag tag-pinned">Pinned</span>
-        </div>
-        <h3>Admission Open for Academic Year 2081 BS</h3>
-        <p>Shramik Shanti Campus is pleased to announce that admissions are now open for all three programs — BCSIT, BALLB, and BAIDS — for the academic year 2081 BS. Interested candidates are encouraged to submit their applications before the deadline. For more information, visit the admissions office or call 977-01-5420110.</p>
-        <div class="notice-card-footer">
-          <span class="notice-date-text">📅 2081-01-15</span>
-          <a href="admissions.html" class="btn btn-navy" style="padding:6px 18px;font-size:.82rem;">Apply Now</a>
-        </div>
-      </div>
+  </main>
+  <section class="section soft">
+    <div class="container">
+      <div class="section-head"><div class="eyebrow">Results</div><h2>Published Results</h2><p>Result PDFs or links uploaded by the campus administration will appear here.</p></div>
+      <div id="results-list" class="empty-state">Loading results...</div>
     </div>
-
-    <div class="notice-card pinned fade-in" data-category="exam">
-      <div class="notice-card-icon">📋</div>
-      <div class="notice-card-body">
-        <div class="notice-card-header">
-          <span class="notice-tag tag-exam">Examination</span>
-          <span class="notice-tag tag-pinned">Pinned</span>
-        </div>
-        <h3>Semester Examination Routine Published — Semester IV &amp; VI</h3>
-        <p>The examination routine for Semester IV and Semester VI (all programs) has been published. Students are advised to download their admit cards from the campus administration office. Examinations will commence from 2081-02-01. No re-scheduling will be entertained.</p>
-        <div class="notice-card-footer">
-          <span class="notice-date-text">📅 2081-01-10</span>
-        </div>
-      </div>
+  </section>
+  <section class="section">
+    <div class="container">
+      <div class="section-head"><div class="eyebrow">Syllabus</div><h2>Syllabus Downloads</h2><p>Students can download latest syllabus resources from here.</p></div>
+      <div id="syllabus-list" class="empty-state">Loading syllabus files...</div>
     </div>
-
-    <div class="notice-card fade-in" data-category="scholarship">
-      <div class="notice-card-icon">🏆</div>
-      <div class="notice-card-body">
-        <div class="notice-card-header">
-          <span class="notice-tag tag-scholarship">Scholarship</span>
-        </div>
-        <h3>Merit-Based Scholarship Applications Now Open</h3>
-        <p>Applications for the Shramik Shanti Merit Scholarship 2081 are now being accepted. Students who secured GPA 3.5 or above in their previous semester are eligible to apply. Scholarships cover up to 50% of tuition fees. Application forms are available at the administration office.</p>
-        <div class="notice-card-footer">
-          <span class="notice-date-text">📅 2081-01-08</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="notice-card fade-in" data-category="event">
-      <div class="notice-card-icon">🏅</div>
-      <div class="notice-card-body">
-        <div class="notice-card-header">
-          <span class="notice-tag tag-event">Event</span>
-        </div>
-        <h3>Annual Sports Week 2081 — Schedule Announced</h3>
-        <p>The Annual Sports Week 2081 will be held from 2081-01-20 to 2081-01-25. Events include cricket, futsal, volleyball, badminton, and table tennis. All students are encouraged to participate. Registration forms are available with the Student Union representative.</p>
-        <div class="notice-card-footer">
-          <span class="notice-date-text">📅 2081-01-05</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="notice-card fade-in" data-category="general">
-      <div class="notice-card-icon">📚</div>
-      <div class="notice-card-body">
-        <div class="notice-card-header">
-          <span class="notice-tag tag-general">General</span>
-        </div>
-        <h3>Library Extended Hours During Examination Period</h3>
-        <p>The campus library will remain open from 7:00 AM to 8:00 PM during the examination period (2081-01-28 to 2081-02-20). Students are encouraged to make full use of library resources. Silence must be maintained in the reading hall at all times.</p>
-        <div class="notice-card-footer">
-          <span class="notice-date-text">📅 2081-01-03</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="notice-card fade-in" data-category="academic">
-      <div class="notice-card-icon">📝</div>
-      <div class="notice-card-body">
-        <div class="notice-card-header">
-          <span class="notice-tag tag-academic">Academic</span>
-        </div>
-        <h3>Class Timetable for Semester I &amp; III — 2081</h3>
-        <p>The revised class timetable for Semester I and Semester III students has been finalized and will be effective from 2081-01-20. Students are requested to collect their timetable from their respective department heads. Any scheduling conflicts should be reported within 3 days of receiving the timetable.</p>
-        <div class="notice-card-footer">
-          <span class="notice-date-text">📅 2080-12-28</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="notice-card fade-in" data-category="event">
-      <div class="notice-card-icon">🎭</div>
-      <div class="notice-card-body">
-        <div class="notice-card-header">
-          <span class="notice-tag tag-event">Event</span>
-        </div>
-        <h3>Cultural Program &amp; Annual Day Celebration 2081</h3>
-        <p>Shramik Shanti Campus cordially invites all students, faculty, and staff to the Annual Day Celebration 2081 to be held on 2081-01-30 at the campus premises. The program will feature cultural performances, award ceremonies, and special addresses by distinguished guests.</p>
-        <div class="notice-card-footer">
-          <span class="notice-date-text">📅 2080-12-25</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="notice-card fade-in" data-category="general">
-      <div class="notice-card-icon">🔔</div>
-      <div class="notice-card-body">
-        <div class="notice-card-header">
-          <span class="notice-tag tag-general">General</span>
-        </div>
-        <h3>Campus Identity Card Renewal — Mandatory</h3>
-        <p>All students are required to renew their campus identity cards for the academic year 2081 BS. The renewal process begins from 2081-01-15. Students without valid ID cards will not be permitted to sit for examinations. Contact the administration office for details.</p>
-        <div class="notice-card-footer">
-          <span class="notice-date-text">📅 2080-12-20</span>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<footer class="footer"><div class="container">
-  <div class="footer-grid">
-    <div class="footer-brand"><img src="images/logo.png" alt="Logo" /><p>Empowering Nepal's future leaders through excellence in technology, law, and innovation since 1997.</p></div>
-    <div class="footer-links"><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="programs.html">Programs</a></li><li><a href="faculty.html">Faculty</a></li><li><a href="notices.html">Notices</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="contact.html">Contact</a></li></ul></div>
-    <div class="footer-programs"><h4>Programs</h4><ul><li><a href="programs.html">BCSIT</a></li><li><a href="programs.html">BALLB</a></li><li><a href="programs.html">BAIDS</a></li><li><a href="admissions.html">Admissions</a></li></ul></div>
-    <div class="footer-contact"><h4>Contact</h4>
-      <div class="footer-contact-item"><div class="icon">📍</div><p>Chyasal, Shankhamul, Lalitpur-9, Nepal</p></div>
-      <div class="footer-contact-item"><div class="icon">📞</div><a href="tel:+97715420110">977-01-5420110</a></div>
-      <div class="footer-contact-item"><div class="icon">✉️</div><a href="mailto:shramik.campus@gmail.com">shramik.campus@gmail.com</a></div>
-    </div>
-  </div>
-  <div class="footer-bottom"><p>&copy; 2024 Shramik Shanti Campus. All rights reserved.</p><p>Affiliated with <a href="https://www.pu.edu.np" target="_blank">Pokhara University</a></p></div>
-</div></footer>
-<script src="js/main.js"></script>
+  </section>
+  <footer class="footer"><div class="container footer-grid"><div><img src="images/university_logo.png" alt="Pokhara University logo" /><p>Shramik Shanti Campus, Chyasal-9, Lalitpur.</p></div><div><h4>Quick Links</h4><ul><li><a href="about.html">About</a></li><li><a href="programs.html">Programs</a></li><li><a href="admissions.html">Admissions</a></li></ul></div><div><h4>Programs</h4><ul><li>BAIDS</li><li>BCSIT</li><li>BA LL.B</li></ul></div><div><h4>Contact</h4><p><a href="tel:+977015404111">015404111</a></p><p><a href="mailto:sscampuspu@gmail.com">sscampuspu@gmail.com</a></p></div></div><div class="container footer-bottom"><p>© 2026 Shramik Shanti Campus.</p><p>Constituent Campus of Pokhara University</p></div></footer>
+  <script src="js/main.js"></script>
 </body>
 </html>

@@ -1,200 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Programs — Shramik Shanti Campus</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Programs | Shramik Shanti Campus</title>
   <link rel="stylesheet" href="css/style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
 <body>
-<nav class="navbar always-solid" id="navbar">
-  <div class="container"><div class="navbar-inner">
-    <a href="index.html" class="navbar-brand"><img src="images/logo.png" alt="Logo" /><div class="brand-text"><span class="brand-name">Shramik Shanti Campus</span><span class="brand-sub">Affiliated to Pokhara University</span></div></a>
-    <ul class="navbar-links">
-      <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="programs.html" class="active">Programs</a></li>
-      <li><a href="faculty.html">Faculty</a></li><li><a href="notices.html">Notices</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="contact.html">Contact</a></li>
-    </ul>
-    <div class="navbar-cta"><a href="admissions.html" class="btn btn-gold">Apply Now</a></div>
-    <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
-  </div></div>
-</nav>
-<nav class="mobile-nav" id="mobile-nav">
-  <a href="index.html">Home</a><a href="about.html">About</a><a href="programs.html" class="active">Programs</a>
-  <a href="faculty.html">Faculty</a><a href="notices.html">Notices</a><a href="gallery.html">Gallery</a><a href="contact.html">Contact</a>
-  <div class="mobile-nav-cta"><a href="admissions.html" class="btn btn-gold">Apply for Admission</a></div>
-</nav>
+  <nav class="navbar solid" id="navbar"><div class="container nav-inner"><a class="brand" href="index.html"><img src="images/logo.png" alt="Logo" /><span><strong>Shramik Shanti Campus</strong><span>Pokhara University</span></span></a><div class="nav-links"><a href="index.html">Home</a><a href="about.html">About</a><a class="active" href="programs.html">Programs</a><a href="notices.html">Notices</a><a href="gallery.html">Gallery</a><a href="contact.html">Contact</a></div><div class="nav-cta"><a class="btn btn-accent" href="admissions.html">Join Now</a></div><button class="nav-toggle" id="hamburger" aria-label="Open menu">=</button></div></nav>
+  <div class="mobile-nav" id="mobile-nav"><a href="index.html">Home</a><a href="about.html">About</a><a class="active" href="programs.html">Programs</a><a href="notices.html">Notices</a><a href="gallery.html">Gallery</a><a href="contact.html">Contact</a><a href="admissions.html">Admissions</a></div>
 
-<section class="page-hero">
-  <div class="container">
-    <div class="breadcrumb"><a href="index.html">Home</a><span>/</span><span style="color:rgba(255,255,255,.6)">Programs</span></div>
-    <h1>Academic Programs</h1>
-    <p>Three Pokhara University-affiliated bachelor's degrees designed to launch your career in technology, law, and development.</p>
-  </div>
-</section>
+  <header class="page-hero"><div class="container"><div class="breadcrumb"><a href="index.html">Home</a><span>/</span><span>Programs</span></div><h1>Academic Programs</h1><p>Pokhara University programs focused on artificial intelligence, information technology and law.</p></div></header>
 
-<section class="section">
-  <div class="container">
+  <main class="section">
+    <div class="container">
+      <article class="card program-card" id="baids" style="margin-bottom:22px">
+        <span class="program-code">BAIDS</span>
+        <h2>Bachelor of Artificial Intelligence and Data Science</h2>
+        <p class="lead">A future-facing program for students who want to build careers in AI, analytics, automation and data-driven decision making.</p>
+        <div class="grid-2" style="margin-top:20px">
+          <div><h3>Applying Criteria</h3><ul class="check-list"><li>10+2 from any stream with 100 marks in Computer Science or Mathematics</li><li>Grade 9-12 Technical Education with 100 marks in Mathematics or Computer</li><li>A-Level with minimum Grade D</li></ul></div>
+          <div><h3>Career Pathways</h3><ul class="check-list"><li>AI and machine learning assistant</li><li>Data analyst</li><li>Software and automation developer</li><li>Research and analytics associate</li></ul></div>
+        </div>
+      </article>
 
-    <!-- BCSIT -->
-    <div class="program-detail fade-in">
-      <div class="program-detail-header">
-        <div>
-          <div class="program-detail-badge">BCSIT</div>
-          <h2>Bachelor of Computer Science &amp; Information Technology</h2>
-          <p>A rigorous 4-year program equipping students with deep expertise in computing, software development, networking, and digital innovation.</p>
+      <article class="card program-card" id="bcsit" style="margin-bottom:22px">
+        <span class="program-code">BCSIT</span>
+        <h2>Bachelor of Computer System and Information Technology</h2>
+        <p class="lead">A computing program designed for students from any stream who want a strong foundation in systems, software, networking and IT operations.</p>
+        <div class="grid-2" style="margin-top:20px">
+          <div><h3>Eligibility</h3><ul class="check-list"><li>Students from any stream can apply</li><li>Interest in computing, systems and problem solving is recommended</li></ul></div>
+          <div><h3>Career Pathways</h3><ul class="check-list"><li>Software developer</li><li>System administrator</li><li>Network support engineer</li><li>IT officer</li></ul></div>
         </div>
-        <a href="admissions.html" class="btn btn-outline btn-outline-white">Apply Now</a>
-      </div>
-      <div class="program-detail-body">
-        <div class="program-highlights">
-          <h3>Program Highlights</h3>
-          <div class="highlights-list">
-            <div class="highlight-item"><div class="bullet">✦</div><span>Software Engineering &amp; Development</span></div>
-            <div class="highlight-item"><div class="bullet">✦</div><span>Database Management Systems</span></div>
-            <div class="highlight-item"><div class="bullet">✦</div><span>Computer Networks &amp; Security</span></div>
-            <div class="highlight-item"><div class="bullet">✦</div><span>Artificial Intelligence &amp; Machine Learning</span></div>
-            <div class="highlight-item"><div class="bullet">✦</div><span>Web &amp; Mobile Application Development</span></div>
-            <div class="highlight-item"><div class="bullet">✦</div><span>Project Work &amp; Industry Internship</span></div>
-          </div>
+      </article>
+
+      <article class="card program-card" id="ballb">
+        <span class="program-code">BA LL.B</span>
+        <h2>Bachelor of Arts Bachelor of Laws</h2>
+        <p class="lead">An integrated law program for students preparing for legal practice, governance, advocacy, public administration and research.</p>
+        <div class="grid-2" style="margin-top:20px">
+          <div><h3>Eligibility</h3><ul class="check-list"><li>Students from any stream can apply</li><li>Strong reading, writing and public reasoning skills are helpful</li></ul></div>
+          <div><h3>Career Pathways</h3><ul class="check-list"><li>Legal practitioner</li><li>Legal advisor</li><li>Public service officer</li><li>Rights and policy researcher</li></ul></div>
         </div>
-        <div class="program-specs">
-          <h3>Program Details</h3>
-          <div class="spec-grid">
-            <div class="spec-item"><div class="spec-label">Duration</div><div class="spec-value">4 Years (8 Semesters)</div></div>
-            <div class="spec-item"><div class="spec-label">Total Seats</div><div class="spec-value">72 Seats</div></div>
-            <div class="spec-item"><div class="spec-label">Affiliation</div><div class="spec-value">Pokhara University</div></div>
-            <div class="spec-item"><div class="spec-label">Level</div><div class="spec-value">Bachelor's Degree</div></div>
-          </div>
-          <div class="program-careers">
-            <h3>Career Opportunities</h3>
-            <div class="career-tags">
-              <span class="career-tag">Software Developer</span>
-              <span class="career-tag">IT Manager</span>
-              <span class="career-tag">Data Analyst</span>
-              <span class="career-tag">Network Engineer</span>
-              <span class="career-tag">Web Developer</span>
-              <span class="career-tag">System Administrator</span>
-            </div>
-          </div>
-        </div>
-      </div>
+      </article>
     </div>
+  </main>
 
-    <!-- BALLB -->
-    <div class="program-detail fade-in">
-      <div class="program-detail-header">
-        <div>
-          <div class="program-detail-badge">BALLB</div>
-          <h2>Bachelor of Arts in Law &amp; Bachelor of LLaw</h2>
-          <p>A comprehensive 5-year dual degree combining arts education with a thorough grounding in Nepalese and international law.</p>
-        </div>
-        <a href="admissions.html" class="btn btn-outline btn-outline-white">Apply Now</a>
-      </div>
-      <div class="program-detail-body">
-        <div class="program-highlights">
-          <h3>Program Highlights</h3>
-          <div class="highlights-list">
-            <div class="highlight-item"><div class="bullet">✦</div><span>Constitutional &amp; Administrative Law</span></div>
-            <div class="highlight-item"><div class="bullet">✦</div><span>Civil &amp; Criminal Procedure</span></div>
-            <div class="highlight-item"><div class="bullet">✦</div><span>Corporate &amp; Commercial Law</span></div>
-            <div class="highlight-item"><div class="bullet">✦</div><span>International Law &amp; Human Rights</span></div>
-            <div class="highlight-item"><div class="bullet">✦</div><span>Legal Research &amp; Moot Court</span></div>
-            <div class="highlight-item"><div class="bullet">✦</div><span>Internship at Law Firms &amp; Courts</span></div>
-          </div>
-        </div>
-        <div class="program-specs">
-          <h3>Program Details</h3>
-          <div class="spec-grid">
-            <div class="spec-item"><div class="spec-label">Duration</div><div class="spec-value">5 Years (10 Semesters)</div></div>
-            <div class="spec-item"><div class="spec-label">Total Seats</div><div class="spec-value">60 Seats</div></div>
-            <div class="spec-item"><div class="spec-label">Affiliation</div><div class="spec-value">Pokhara University</div></div>
-            <div class="spec-item"><div class="spec-label">Level</div><div class="spec-value">Dual Bachelor's Degree</div></div>
-          </div>
-          <div class="program-careers">
-            <h3>Career Opportunities</h3>
-            <div class="career-tags">
-              <span class="career-tag">Advocate</span>
-              <span class="career-tag">Judge (via PSC)</span>
-              <span class="career-tag">Legal Advisor</span>
-              <span class="career-tag">Government Officer</span>
-              <span class="career-tag">Corporate Counsel</span>
-              <span class="career-tag">Human Rights Worker</span>
-            </div>
-          </div>
-        </div>
-      </div>
+  <section class="section soft">
+    <div class="container">
+      <div class="section-head"><div class="eyebrow">Downloads</div><h2>Syllabus Files</h2><p>Files uploaded from the admin panel will appear here.</p></div>
+      <div id="syllabus-list" class="empty-state">Loading syllabus files...</div>
     </div>
+  </section>
 
-    <!-- BAIDS -->
-    <div class="program-detail fade-in">
-      <div class="program-detail-header">
-        <div>
-          <div class="program-detail-badge">BAIDS</div>
-          <h2>Bachelor of AI and DS</h2>
-          <p>A multidisciplinary 4-year program exploring the intersection of economics, sociology, politics, and community development in Nepal's context.</p>
-        </div>
-        <a href="admissions.html" class="btn btn-outline btn-outline-white">Apply Now</a>
-      </div>
-      <div class="program-detail-body">
-        <div class="program-highlights">
-          <h3>Program Highlights</h3>
-          <div class="highlights-list">
-            <div class="highlight-item"><div class="bullet">✦</div><span>Development Economics &amp; Policy Analysis</span></div>
-            <div class="highlight-item"><div class="bullet">✦</div><span>Sociology &amp; Rural Development</span></div>
-            <div class="highlight-item"><div class="bullet">✦</div><span>Gender Studies &amp; Social Inclusion</span></div>
-            <div class="highlight-item"><div class="bullet">✦</div><span>Environmental Studies &amp; Sustainability</span></div>
-            <div class="highlight-item"><div class="bullet">✦</div><span>Research Methods &amp; Field Work</span></div>
-            <div class="highlight-item"><div class="bullet">✦</div><span>NGO &amp; INGO Management</span></div>
-          </div>
-        </div>
-        <div class="program-specs">
-          <h3>Program Details</h3>
-          <div class="spec-grid">
-            <div class="spec-item"><div class="spec-label">Duration</div><div class="spec-value">4 Years (8 Semesters)</div></div>
-            <div class="spec-item"><div class="spec-label">Total Seats</div><div class="spec-value">48 Seats</div></div>
-            <div class="spec-item"><div class="spec-label">Affiliation</div><div class="spec-value">Pokhara University</div></div>
-            <div class="spec-item"><div class="spec-label">Level</div><div class="spec-value">Bachelor's Degree</div></div>
-          </div>
-          <div class="program-careers">
-            <h3>Career Opportunities</h3>
-            <div class="career-tags">
-              <span class="career-tag">Development Officer</span>
-              <span class="career-tag">NGO Coordinator</span>
-              <span class="career-tag">Policy Analyst</span>
-              <span class="career-tag">Social Worker</span>
-              <span class="career-tag">Researcher</span>
-              <span class="career-tag">Government Service</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+  <section class="section-tight" style="background:#071932;color:white"><div class="container grid-2"><div><h2 style="color:white">Need help choosing a program?</h2><p style="color:rgba(255,255,255,.75)">Call 015404111 or visit Chyasal-9, Lalitpur, near Shankhamul Park.</p></div><a class="btn btn-accent" href="contact.html">Ask Admissions</a></div></section>
 
-<section class="cta-banner">
-  <div class="container"><div class="cta-inner fade-in">
-    <h2>Ready to Enroll?</h2>
-    <p>Applications for academic year 2081 BS are open. Secure your seat today.</p>
-    <div class="cta-btns">
-      <a href="admissions.html" class="btn btn-gold">Apply Now</a>
-      <a href="contact.html" class="btn btn-outline btn-outline-white">Ask a Question</a>
-    </div>
-  </div></div>
-</section>
-
-<footer class="footer"><div class="container">
-  <div class="footer-grid">
-    <div class="footer-brand"><img src="images/logo.png" alt="Logo" /><p>Empowering Nepal's future leaders through excellence in technology, law, and innovation since 1997.</p></div>
-    <div class="footer-links"><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="programs.html">Programs</a></li><li><a href="faculty.html">Faculty</a></li><li><a href="notices.html">Notices</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="contact.html">Contact</a></li></ul></div>
-    <div class="footer-programs"><h4>Programs</h4><ul><li><a href="programs.html">BCSIT</a></li><li><a href="programs.html">BALLB</a></li><li><a href="programs.html">BAIDS</a></li><li><a href="admissions.html">Admissions</a></li></ul></div>
-    <div class="footer-contact"><h4>Contact</h4>
-      <div class="footer-contact-item"><div class="icon">📍</div><p>Chyasal, Shankhamul, Lalitpur-9, Nepal</p></div>
-      <div class="footer-contact-item"><div class="icon">📞</div><a href="tel:+97715420110">977-01-5420110</a></div>
-      <div class="footer-contact-item"><div class="icon">✉️</div><a href="mailto:shramik.campus@gmail.com">shramik.campus@gmail.com</a></div>
-    </div>
-  </div>
-  <div class="footer-bottom"><p>&copy; 2024 Shramik Shanti Campus. All rights reserved.</p><p>Affiliated with <a href="https://www.pu.edu.np" target="_blank">Pokhara University</a></p></div>
-</div></footer>
-<script src="js/main.js"></script>
+  <footer class="footer"><div class="container footer-grid"><div><img src="images/university_logo.png" alt="Pokhara University logo" /><p>Shramik Shanti Campus, Chyasal-9, Lalitpur.</p></div><div><h4>Quick Links</h4><ul><li><a href="about.html">About</a></li><li><a href="notices.html">Notices</a></li><li><a href="admissions.html">Admissions</a></li></ul></div><div><h4>Programs</h4><ul><li>BAIDS</li><li>BCSIT</li><li>BA LL.B</li></ul></div><div><h4>Contact</h4><p><a href="tel:+977015404111">015404111</a></p><p><a href="mailto:sscampuspu@gmail.com">sscampuspu@gmail.com</a></p></div></div><div class="container footer-bottom"><p>© 2026 Shramik Shanti Campus.</p><p>Constituent Campus of Pokhara University</p></div></footer>
+  <script src="js/main.js"></script>
 </body>
 </html>
